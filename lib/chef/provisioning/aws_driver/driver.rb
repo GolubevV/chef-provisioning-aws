@@ -604,6 +604,7 @@ netsh advfirewall firewall add rule name="WinRM 5986" protocol=TCP dir=in localp
 net stop winrm
 sc config winrm start=auto
 net start winrm
+set-executionpolicy Unrestricted -Scope LocalMachine -Force
 </powershell>
 EOD
     end
@@ -642,6 +643,7 @@ winrm create winrm/config/listener?Address=*+Transport=HTTPS  `@`{Hostname=`"($c
 net stop winrm
 sc config winrm start=auto
 net start winrm
+set-executionpolicy Unrestricted -Scope LocalMachine -Force
 </powershell>
 EOD
     end
